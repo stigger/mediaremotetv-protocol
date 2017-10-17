@@ -6,11 +6,13 @@ message ProtocolMessage {
   enum Type { 
     SEND_COMMAND_MESSAGE = 1;
     SEND_COMMAND_RESULT_MESSAGE = 2;
+    GET_STATE_MESSAGE = 3;
     SET_STATE_MESSAGE = 4;
     SET_ARTWORK_MESSAGE = 5;
     REGISTER_HID_DEVICE_MESSAGE = 6;
     REGISTER_HID_DEVICE_RESULT_MESSAGE = 7;
     SEND_HID_EVENT_MESSAGE = 8;
+    SEND_HID_REPORT_MESSAGE = 9;
     SEND_VIRTUAL_TOUCH_EVENT_MESSAGE = 10;
     NOTIFICATION_MESSAGE = 11;
     CONTENT_ITEMS_CHANGED_NOTIFICATION_MESSAGE = 12;
@@ -36,6 +38,16 @@ message ProtocolMessage {
     CRYPTO_PAIRING_MESSAGE = 34; 
     GAME_CONTROLLER_PROPERTIES_MESSAGE = 35;
     SET_READY_STATE_MESSAGE = 36;
+    DEVICE_INFO_UPDATE = 37;
+    SET_DISCONNECTING_STATE_MESSAGE = 38;
+    SEND_BUTTON_EVENT = 39;
+    SET_HILITE_MODE_MESSAGE = 40;
+    WAKE_DEVICE = 41;
+    GENERIC_MESSAGE = 42;
+    SEND_PACKED_VIRTUAL_TOUCH_EVENT = 43;
+    SEND_LYRICS_EVENT = 44;
+    PLAYBACK_QUEUE_CAPABILITIES_REQUEST = 45;
+    MODIFY_OUTPUT_CONTEXT_REQUEST = 46;
   }
 
   required Type type = 1; // Identifies which underlying message is filled in.
@@ -75,4 +87,6 @@ message ProtocolMessage {
 //  optional CryptoPairingMessage cryptoPairingMessage = 39;
 //  optional GameControllerPropertiesMessage gameControllerPropertiesMessage = 40;
 //  optional SetReadyStateMessage setReadyStateMessage = 41;
+//  optional SendButtonEventMessage sendButtonEventMessage = 43;
+//  optional SetHiliteModeMessage setHiliteModeMessage = 44;
 }
